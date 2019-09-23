@@ -1,2 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.applicaster.blimizziloginplugin" />
+    package="com.applicaster.blimizziloginplugin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <activity android:name=".screens.BlimIzziLoginActivity"/>
+    </application>
+</manifest>
