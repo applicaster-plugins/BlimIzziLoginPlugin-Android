@@ -2,8 +2,10 @@ package com.applicaster.blimizziloginplugin
 
 import android.content.Context
 import android.content.Intent
+import com.applicaster.atom.model.APAtomEntry
 import com.applicaster.blimizziloginplugin.screens.BlimIzziLoginActivity
 import com.applicaster.blimizziloginplugin.utils.Utils
+import com.applicaster.model.APVodItem
 import com.applicaster.plugin_manager.PluginSchemeI
 import com.applicaster.plugin_manager.hook.HookListener
 import com.applicaster.plugin_manager.login.AsyncLoginContract
@@ -16,11 +18,18 @@ class BlimIzziLoginContract : AsyncLoginContract(), PluginSchemeI {
     }
 
     override fun login(context: Context?, playable: Playable?, additionalParams: MutableMap<Any?, Any?>?) {
-        // do nothing
+        if(Utils.aDayHasPassed()) {
+            context?.startActivity(Intent(context, BlimIzziLoginActivity::class.java))
+        } else {
+            LoginManager.notifyEvent(context, LoginManager.RequestType.LOGIN, true)
+        }
     }
 
     override fun isItemLocked(model: Any?): Boolean {
-        return true
+        if(model is APVodItem && model.isLive) {
+            return true
+        }
+        return false
     }
 
     override fun isTokenValid(): Boolean {
