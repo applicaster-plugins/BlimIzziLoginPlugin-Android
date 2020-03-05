@@ -18,7 +18,7 @@ class BlimIzziLoginContract : AsyncLoginContract(), PluginSchemeI {
     }
 
     override fun login(context: Context?, playable: Playable?, additionalParams: MutableMap<Any?, Any?>?) {
-        if(Utils.aDayHasPassed()) {
+        if(Utils.aDayHasPassed() || playable?.isFree == true) {
             context?.startActivity(Intent(context, BlimIzziLoginActivity::class.java))
         } else {
             LoginManager.notifyEvent(context, LoginManager.RequestType.LOGIN, true)
