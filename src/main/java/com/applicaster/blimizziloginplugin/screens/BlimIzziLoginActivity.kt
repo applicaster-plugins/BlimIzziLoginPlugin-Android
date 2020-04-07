@@ -41,4 +41,9 @@ class BlimIzziLoginActivity : Activity() {
         }
         wv_blim_izzi_login.loadUrl(LOGIN_URL)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        LoginManager.notifyEvent(context, LoginManager.RequestType.LOGIN, false)
+    }
 }
