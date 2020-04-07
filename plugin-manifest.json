@@ -8,7 +8,7 @@
   "dependency_repository_url": [
   ],
   "platform": "android",
-  "manifest_version": "1.0.0",
+  "manifest_version": "1.0.1",
   "author_email": "dmytro.puzak@corewillsoft.com",
   "author_name": "Dmytro Puzak",
   "name": "BlimIzziLoginPlugin",
@@ -18,7 +18,7 @@
   "identifier": "BlimIzziLoginPlugin",
   "ui_builder_support": true,
   "dependency_name": "com.applicaster:BlimIzziLoginPlugin",
-  "dependency_version": "1.0.0",
+  "dependency_version": "1.0.1",
   "whitelisted_account_ids": [
     "57c997a8373538000b000000"
   ],
