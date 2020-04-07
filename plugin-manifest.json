@@ -10,9 +10,9 @@
 
   ],
   "platform": "android",
-  "manifest_version": "0.0.1",
-  "author_email": "j.hernandez@applicaster.com",
-  "author_name": "Juan Hernandez",
+  "manifest_version": "0.0.2",
+  "author_email": "dmytro.puzak@corewillsoft.com",
+  "author_name": "Dmytro Puzak",
   "name": "BlimIzziLoginPlugin",
   "description": "Login for Blim/Izzi",
   "type": "login",
@@ -20,7 +20,7 @@
   "identifier": "BlimIzziLoginPlugin",
   "ui_builder_support": true,
   "dependency_name": "com.applicaster:BlimIzziLoginPlugin",
-  "dependency_version": "0.0.+",
+  "dependency_version": "0.0.2",
   "whitelisted_account_ids": [
     "57c997a8373538000b000000"
   ],
