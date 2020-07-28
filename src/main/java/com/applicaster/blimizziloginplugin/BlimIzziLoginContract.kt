@@ -17,15 +17,15 @@ class BlimIzziLoginContract : AsyncLoginContract(), PluginSchemeI {
     }
 
     override fun login(context: Context?, playable: Playable?, additionalParams: MutableMap<Any?, Any?>?) {
-        if (playable?.isFree == true || !Utils.aDayHasPassed()) {
-            LoginManager.notifyEvent(context, LoginManager.RequestType.LOGIN, true)
-        } else {
+        if (Utils.aDayHasPassed()) {
             context?.startActivity(Intent(context, BlimIzziLoginActivity::class.java))
+        } else {
+            LoginManager.notifyEvent(context, LoginManager.RequestType.LOGIN, true)
         }
     }
 
     override fun isItemLocked(model: Any?): Boolean {
-        if (model is APVodItem && model.isLive && !model.isFree) {
+        if (model is APVodItem && model.isLive) {
             return true
         }
         return false
